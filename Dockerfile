@@ -10,7 +10,8 @@ ARG LANGUAGE="en_US.UTF-8"
 ARG TERM="xterm-256color"
 
 RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get -y install apt-utils locales\
+    && DEBIAN_FRONTEND=noninteractive apt-get -y install apt-utils locales python-software-properties\
+    && DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:ondrej/php\
     && DEBIAN_FRONTEND=noninteractive apt-get -y install \
         curl \
         ffmpeg \
